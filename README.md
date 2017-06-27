@@ -34,7 +34,7 @@ log.prefix('key'); //add new key to uniqueKey
 
 ```javascript
 log.info('1、get api data');
-log.info('2、get api data', '详细信息内容JSON');
+log.info('2、get api data', 'detailed data');
 log.prefix("userid");
 log.info('3、step 3');
 log.info('4、step 4');

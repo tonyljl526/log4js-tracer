@@ -1,134 +1,134 @@
-var env = process.env.SERVER_CONFIG || process.env.NODE_ENV || 'development'
+const env = process.env.SERVER_CONFIG || process.env.NODE_ENV || 'development'
 
-function Configure(project_name) {
+function Configure (logPath) {
   return {
     development: {
       config: {
-        "appenders": [
+        'appenders': [
           {
-            "type": "console",
-            "category": "console"
+            'type': 'console',
+            'category': 'console'
           }, {
-            "type": "console",
-            "filename": logPath,
-            "pattern": "yyyy-MM-dd-out.log",
-            "absolute": true,
-            "alwaysIncludePattern": true,
-            "category": "out"
+            'type': 'console',
+            'filename': logPath,
+            'pattern': 'yyyy-MM-dd-out.log',
+            'absolute': true,
+            'alwaysIncludePattern': true,
+            'category': 'out'
           }, {
-            "type": "console",
-            "filename": logPath,
-            "pattern": "yyyy-MM-dd-err.log",
-            "absolute": true,
-            "alwaysIncludePattern": true,
-            "category": "err"
+            'type': 'console',
+            'filename': logPath,
+            'pattern': 'yyyy-MM-dd-err.log',
+            'absolute': true,
+            'alwaysIncludePattern': true,
+            'category': 'err'
           }
         ],
-        "replaceConsole": true,
-        "levels": {
-          "out": "info",
-          "err": "warn",
-          "console": "info"
+        'replaceConsole': true,
+        'levels': {
+          'out': 'info',
+          'err': 'warn',
+          'console': 'info'
         }
       },
-      format: ":method :url :status - :response-time ms"
+      format: ':method :url :status - :response-time ms'
     },
     testing: {
       config: {
-        "appenders": [
+        'appenders': [
           {
-            "type": "console",
-            "category": "console"
+            'type': 'console',
+            'category': 'console'
           }, {
-            "type": "dateFile",
-            "filename": logPath,
-            "pattern": "yyyy-MM-dd-out.log",
-            "absolute": true,
-            "alwaysIncludePattern": true,
-            "category": "out"
+            'type': 'dateFile',
+            'filename': logPath,
+            'pattern': 'yyyy-MM-dd-out.log',
+            'absolute': true,
+            'alwaysIncludePattern': true,
+            'category': 'out'
           }, {
-            "type": "dateFile",
-            "filename": logPath,
-            "pattern": "yyyy-MM-dd-err.log",
-            "absolute": true,
-            "alwaysIncludePattern": true,
-            "category": "err"
+            'type': 'dateFile',
+            'filename': logPath,
+            'pattern': 'yyyy-MM-dd-err.log',
+            'absolute': true,
+            'alwaysIncludePattern': true,
+            'category': 'err'
           }
         ],
-        "replaceConsole": false,
-        "levels": {
-          "out": "info",
-          "err": "warn",
-          "console": "info"
+        'replaceConsole': false,
+        'levels': {
+          'out': 'info',
+          'err': 'warn',
+          'console': 'info'
         }
       },
-      format: ":method :url :status - :response-time ms"
+      format: ':method :url :status - :response-time ms'
     },
     simulation: {
       config: {
-        "appenders": [
+        'appenders': [
           {
-            "type": "console",
-            "category": "console"
+            'type': 'console',
+            'category': 'console'
           }, {
-            "type": "dateFile",
-            "filename": logPath,
-            "pattern": "yyyy-MM-dd-out.log",
-            "absolute": true,
-            "alwaysIncludePattern": true,
-            "category": "out"
+            'type': 'dateFile',
+            'filename': logPath,
+            'pattern': 'yyyy-MM-dd-out.log',
+            'absolute': true,
+            'alwaysIncludePattern': true,
+            'category': 'out'
           }, {
-            "type": "dateFile",
-            "filename": logPath,
-            "pattern": "yyyy-MM-dd-err.log",
-            "absolute": true,
-            "alwaysIncludePattern": true,
-            "category": "err"
+            'type': 'dateFile',
+            'filename': logPath,
+            'pattern': 'yyyy-MM-dd-err.log',
+            'absolute': true,
+            'alwaysIncludePattern': true,
+            'category': 'err'
           }
         ],
-        "replaceConsole": false,
-        "levels": {
-          "out": "info",
-          "err": "warn",
-          "console": "info"
+        'replaceConsole': false,
+        'levels': {
+          'out': 'info',
+          'err': 'warn',
+          'console': 'info'
         }
       },
-      format: ":method :url :status - :response-time ms"
+      format: ':method :url :status - :response-time ms'
     },
     production: {
       config: {
-        "appenders": [
+        'appenders': [
           {
-            "type": "console",
-            "category": "console"
+            'type': 'console',
+            'category': 'console'
           }, {
-            "type": "dateFile",
-            "filename": logPath,
-            "pattern": "yyyy-MM-dd-out.log",
-            "absolute": true,
-            "alwaysIncludePattern": true,
-            "category": "out"
+            'type': 'dateFile',
+            'filename': logPath,
+            'pattern': 'yyyy-MM-dd-out.log',
+            'absolute': true,
+            'alwaysIncludePattern': true,
+            'category': 'out'
           }, {
-            "type": "dateFile",
-            "filename": logPath,
-            "pattern": "yyyy-MM-dd-err.log",
-            "absolute": true,
-            "alwaysIncludePattern": true,
-            "category": "err"
+            'type': 'dateFile',
+            'filename': logPath,
+            'pattern': 'yyyy-MM-dd-err.log',
+            'absolute': true,
+            'alwaysIncludePattern': true,
+            'category': 'err'
           }
         ],
-        "replaceConsole": false,
-        "levels": {
-          "out": "info",
-          "err": "warn",
-          "console": "info"
+        'replaceConsole': false,
+        'levels': {
+          'out': 'info',
+          'err': 'warn',
+          'console': 'info'
         }
       },
-      format: ":remote-addr :http-version :method :url :status - :referrer - :user-agent - :response-time ms"
+      format: ':remote-addr :http-version :method :url :status - :referrer - :user-agent - :response-time ms'
     }
   }
 }
 
-module.exports = function(logPath) {
+module.exports = function (logPath) {
   return Configure(logPath)[env]
 }
